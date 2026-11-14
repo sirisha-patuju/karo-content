@@ -22,7 +22,12 @@ Goal: grow @karo.app.official and get the first 100 real signups. Karo is an ema
 6. Post: Make scenario 7035693 via scenarios_run (responsive false). Inputs: type (reel|photo|carousel), media_url (raw.githubusercontent.com/sirisha-patuju/karo-content/main/...), caption, thumb_offset (ms, reel cover frame), files (carousel: [{media_type:"IMAGE", image_url}]).
 7. After 90 seconds, executions_list / executions_get-detail to confirm SUCCESS. On failure, read the error, fix once, retry once, then log FAILED.
 8. Append a row to logs/content-log.csv: date,time,type,hook,caption_first_line,names_used,numbers_used,status. Commit and push.
-9. One-line report only.
+9. Log to the Google Sheet "Karo" (id 1IVcI4cNgWWX_ixD18YbeYGyWndT_s9V3WdsbVrop3Zs), tab "Content data", through the same Make scenario 7035693 (scenarios_run, responsive true) with data:
+   type "sheet", gs_method "POST", gs_url "spreadsheets/1IVcI4cNgWWX_ixD18YbeYGyWndT_s9V3WdsbVrop3Zs/values/'Content data'!A1:append?valueInputOption=RAW", gs_body (JSON text) {"values":[[date,time_ist,type,hook,caption_first_line,"","","","","",""]]}.
+   Columns: Date, Time IST, Type, Hook, Caption, Post ID, Reach, Likes, Saves, Shares, Comments (leave the last 6 empty).
+   Make free plan has 1000 operations a month. Use at most 2 Make runs per slot (post + sheet row). Never poll Make in loops.
+10. At the 08:30 slot only: read signups with Google Drive read_file_content on the same sheet (tab "Sign ups"), count real rows (ignore sirishashankar2020@gmail.com test), append "signups_total=N on DATE" to logs/learnings.md, commit and push.
+11. One-line report only.
 
 ## Caption pattern
 Line 1 hook (feeling or pain, not a product description). 2-3 short lines. CTA: first 100 people, comment "Karo". 3-4 hashtags. Different wording every time.

@@ -1,0 +1,124 @@
+{
+ "id": "example",
+ "seed": 11,
+ "key": 0,
+ "scenes": [
+  {
+   "kind": "flood",
+   "num": 563,
+   "label": "unread emails.",
+   "senders": [
+    "Rachel Moore",
+    "PayPal",
+    "Indeed",
+    "Shopify",
+    "Asana",
+    "Dropbox"
+   ],
+   "cut_notifs": [
+    [
+     "PayPal",
+     "Your receipt from PayPal"
+    ],
+    [
+     "Visa",
+     "Your statement is ready"
+    ],
+    [
+     "DoorDash",
+     "30% off your next order"
+    ]
+   ],
+   "voice": "You have five hundred and sixty-three unread emails, and you haven't even had coffee yet!"
+  },
+  {
+   "kind": "calendar",
+   "l1": "Calendar.",
+   "l2": "Booked solid.",
+   "clash_label": "3 meetings. Same hour.",
+   "clash": [
+    [
+     "Stand up",
+     "9:00 AM"
+    ],
+    [
+     "Client call",
+     "9:00 AM"
+    ],
+    [
+     "Budget review",
+     "9:30 AM"
+    ]
+   ],
+   "voice": "Your calendar is booked solid, with meetings stacked on top of each other."
+  },
+  {
+   "kind": "phone",
+   "l1": "Every reply,",
+   "l2": "typed by hand.",
+   "typed": "Hi Rachel, just following up on the contract we talked about",
+   "typed_sub": "Reply number 48 today.",
+   "voice": "And you are still typing every single reply by hand."
+  },
+  {
+   "kind": "reveal",
+   "tag": "Your email and calendar assistant",
+   "voice": "So we built Karo, your email and calendar assistant."
+  },
+  {
+   "kind": "ask",
+   "kick": "Tell it to follow up.",
+   "big": "It drafts.",
+   "user": "Draft a follow up to Tom about the invoice",
+   "reply": {
+    "type": "draft",
+    "name": "Tom Bennett",
+    "subject": "Re: Invoice 2041",
+    "body": "Hi Tom, just checking in on invoice 2041. Could you confirm payment by Friday? Thanks."
+   },
+   "voice": "Tell Karo to follow up with a client, and the draft is ready in seconds."
+  },
+  {
+   "kind": "ask",
+   "kick": "Tell it to move a meeting.",
+   "big": "It moves.",
+   "user": "Move my 2 PM with Chloe to Thursday",
+   "reply": {
+    "type": "reschedule",
+    "title": "Call with Chloe Parker",
+    "when": "Thursday, 2:00 to 2:30 PM",
+    "note": "Invite updated"
+   },
+   "done": [
+    "Meeting moved",
+    "Chloe has been notified"
+   ],
+   "voice": "Ask it to move a meeting, and it updates the invite for everyone."
+  },
+  {
+   "kind": "chips",
+   "voice": "It works with Gmail and Google Calendar, in one simple conversation."
+  },
+  {
+   "kind": "morning",
+   "greet": "Good morning.",
+   "lines": [
+    "Start your day",
+    "with an empty",
+    "inbox."
+   ],
+   "rows": [
+    "Inbox cleared",
+    "4 replies drafted",
+    "Meeting moved to Thursday"
+   ],
+   "voice": "Imagine starting every single morning like this."
+  },
+  {
+   "kind": "cta",
+   "tag": "Your email and calendar assistant",
+   "cta": "Comment \"Karo\"",
+   "voice": "Meet Karo. Comment Karo to get early access!"
+  }
+ ]
+}

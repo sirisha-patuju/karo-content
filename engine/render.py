@@ -4,7 +4,7 @@ spec = {"slides":[{"name":"c1","kind":"hook|ask|stat|cta","title":"","sub":"","p
 Brand: indigo #120056 bg, blue #2563EB, orange #F97316 ONLY for CTA button. 1080x1350 JPEG."""
 import sys, json, asyncio, html
 from playwright.async_api import async_playwright
-CSS="""*{margin:0;box-sizing:border-box}body{width:1080px;height:1350px;font-family:'Inter','Helvetica Neue',Arial,sans-serif;background:#120056;color:#fff;position:relative;overflow:hidden}
+CSS="""*{margin:0;box-sizing:border-box}body{width:1080px;height:var(--h,1350px);font-family:'Inter','Helvetica Neue',Arial,sans-serif;background:#120056;color:#fff;position:relative;overflow:hidden}
 .b1{position:absolute;width:900px;height:900px;border-radius:50%;background:#2563EB;filter:blur(160px);opacity:.55;top:-300px;right:-300px}
 .b2{position:absolute;width:700px;height:700px;border-radius:50%;background:#4c1d95;filter:blur(150px);opacity:.6;bottom:-250px;left:-250px}
 .w{position:absolute;inset:0;padding:110px 90px;display:flex;flex-direction:column;justify-content:center}
@@ -27,14 +27,14 @@ def body(s,i,n):
     elif k=="cta": out=f'<h1>{e(s["title"])}</h1><div class="sub">{e(s.get("sub"))}</div><div class="btn">{e(s.get("btn") or "Comment \"Karo\"")}</div>'
     pg=f'<div class="pg">{i}/{n}</div>' if n>1 else ''
     return f'<html><style>{CSS}</style><body><div class="b1"></div><div class="b2"></div><div class="tag"><div class="k">K</div>Karo</div>{pg}<div class="w">{out}</div></body></html>'
-async def main(spec,out):
+async def main(spec,out,H=1350):
     sl=spec["slides"]
     async with async_playwright() as p:
-        b=await p.chromium.launch(); pg=await b.new_page(viewport={"width":1080,"height":1350})
+        b=await p.chromium.launch(); pg=await b.new_page(viewport={"width":1080,"height":H})
         for i,s in enumerate(sl,1):
-            await pg.set_content(body(s,i,len(sl))); await pg.wait_for_timeout(200)
+            await pg.set_content(body(s,i,1 if H>1400 else len(sl)).replace('<html>',f'<html style="--h:{H}px">')); await pg.wait_for_timeout(200)
             await pg.screenshot(path=f'{out}/{s["name"]}.jpg',type="jpeg",quality=93)
         await b.close()
 if __name__=="__main__":
     import os; os.makedirs(sys.argv[2],exist_ok=True)
-    asyncio.run(main(json.load(open(sys.argv[1])),sys.argv[2]))
+    asyncio.run(main(json.load(open(sys.argv[1])),sys.argv[2],int(sys.argv[3]) if len(sys.argv)>3 else 1350))

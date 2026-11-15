@@ -62,8 +62,8 @@
   },
   {
    "kind": "reveal",
-   "tag": "Your email and calendar assistant",
-   "voice": "So we built Karo, your email and calendar assistant."
+   "tag": "Your inbox and calendar, taken care of",
+   "voice": "So we built Karo, a service that takes care of your email and calendar for you."
   },
   {
    "kind": "ask",
@@ -116,7 +116,7 @@
   },
   {
    "kind": "cta",
-   "tag": "Your email and calendar assistant",
+   "tag": "Your inbox and calendar, taken care of",
    "cta": "Comment \"Karo\"",
    "voice": "Meet Karo. Comment Karo to get early access!"
   }

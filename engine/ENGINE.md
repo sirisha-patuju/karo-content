@@ -3,6 +3,7 @@
 Goal: grow @karo.app.official and get the first 100 real signups. Karo is an email and Google Calendar assistant (Gmail + Calendar via chat). Signup: https://karo-early-access.lovable.app (link in bio). Instagram captions are not clickable, so the CTA is always: comment "Karo" (a Make scenario auto-replies with the bio-link pointer).
 
 ## Hard rules
+- POSITIONING (Siri, Nov 15): Karo is a SERVICE, never described as an AI tool, AI agent, bot, app or software. Say what it does for the person: "takes care of your email and calendar", "handles your inbox", "replies, reschedules and clears the clutter for you". No tech words (AI, LLM, agent, automation) in captions, voice lines, on-screen text or taglines. Write for someone who has never heard of AI: plain benefits, time saved, stress removed. Reel taglines (reveal and cta scenes): e.g. "Your inbox and calendar, taken care of." Reveal voice: "So we built Karo, a service that takes care of your email and calendar."
 - No em dashes anywhere. English names only. Never call Karo an "AI agent". Never say "Karo means do it in Hindi".
 - Every post: NEW names, numbers, situations. Check logs/content-log.csv and never reuse a name, number or hook. Used so far: Rachel Moore, Tom Bennett, Chloe Parker, 563, 2041, Olivia, Daniel, Grace, Henry, Isabel, Jack, Karen, Leo, Maya, Noah, Paula, Marcus, Elena, 2316, 1326, 612, 1000.
 - Brand: bg indigo #120056, blue #2563EB, orange #F97316 only on the CTA button.

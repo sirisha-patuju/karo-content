@@ -233,7 +233,7 @@ BLD.phone=(i,s)=>`
   <div class="tb" style="left:70px;top:170px;bottom:auto;height:640px;justify-content:flex-start"><div class="big" style="text-align:left;font-size:${s.size||150}px"><span class="line" id="r1_${i}">${esc(s.l1)}</span><span class="line" id="r2_${i}">${esc(s.l2)}<span class="cursor" id="cur_${i}"></span></span></div></div>`;
 BLD.reveal=(i,s)=>`
   <div class="mac" id="m4_${i}" style="left:40px;top:1030px;width:1000px;height:600px"><div class="scr"><div class="cam"></div><img src="karo_ui.png" style="width:100%;height:100%;object-fit:cover;display:block"></div></div>
-  <div class="center" style="justify-content:flex-start;padding-top:260px"><div class="big" id="wb_${i}" style="font-size:150px;position:absolute;top:420px">${esc(s.pre||'We built')}</div><div class="big" id="logo_${i}" style="font-size:300px">Karo</div><div class="tag" id="tag_${i}">${esc(s.tag||'Your email and calendar assistant')}</div></div>`;
+  <div class="center" style="justify-content:flex-start;padding-top:260px"><div class="big" id="wb_${i}" style="font-size:150px;position:absolute;top:420px">${esc(s.pre||'We built')}</div><div class="big" id="logo_${i}" style="font-size:300px">Karo</div><div class="tag" id="tag_${i}">${esc(s.tag||'Your inbox and calendar, taken care of')}</div></div>`;
 BLD.ask=(i,s)=>{const clear=s.reply.type==='clear';return `
   <div class="mac" id="m_${i}" data-s="0.8" style="left:-90px;top:${clear?700:855}px"></div>
   ${clear?`<div class="pcard" id="pc_${i}" style="left:290px;top:1440px;width:500px"></div>`:''}
@@ -253,7 +253,7 @@ BLD.morning=(i,s)=>`
     ${s.rows.map(r=>`<div class="mrow rv"><span class="ok">&#10003;</span>${esc(r)}</div>`).join('')}</div></div></div>
   <div class="tb" style="left:60px;width:960px;top:170px;bottom:auto;height:640px;justify-content:flex-start"><div class="big" style="font-size:${s.size||122}px">${s.lines.map((l,j)=>`<span class="line" id="n${j}_${i}">${esc(l)}</span>`).join('')}</div></div>`;
 BLD.cta=(i,s)=>`
-  <div class="center"><div class="big" id="lg2_${i}" style="font-size:380px">Karo</div><div class="tag" id="tg2_${i}" style="margin-top:6px">${esc(s.tag||'Your email and calendar assistant')}</div><div style="height:60px"></div><div class="cta" id="cta_${i}">${esc(s.cta||'Get early access')}</div></div>`;
+  <div class="center"><div class="big" id="lg2_${i}" style="font-size:380px">Karo</div><div class="tag" id="tg2_${i}" style="margin-top:6px">${esc(s.tag||'Your inbox and calendar, taken care of')}</div><div style="height:60px"></div><div class="cta" id="cta_${i}">${esc(s.cta||'Get early access')}</div></div>`;
 
 // ---------- build all scenes
 const scenesEl=$('scenes');const SEL=[];

@@ -3,6 +3,7 @@
 Goal: grow @karo.app.official and get the first 100 real signups. Karo is an email and Google Calendar assistant (Gmail + Calendar via chat). Signup: https://karo-early-access.lovable.app (link in bio). Instagram captions are not clickable, so the CTA is always: comment "Karo" (a Make scenario auto-replies with the bio-link pointer).
 
 ## Hard rules
+- VARIETY (Siri, Nov 15): every post is a different real situation (different person, moment, Karo job, hook style) with the same idea underneath. See engine/situations.md. Posts that repeat the generic inbox-overload story, or the same persona or job as a recent post, are not allowed.
 - POSITIONING (Siri, Nov 15): Karo is a SERVICE, never described as an AI tool, AI agent, bot, app or software. Say what it does for the person: "takes care of your email and calendar", "handles your inbox", "replies, reschedules and clears the clutter for you". No tech words (AI, LLM, agent, automation) in captions, voice lines, on-screen text or taglines. Write for someone who has never heard of AI: plain benefits, time saved, stress removed. Reel taglines (reveal and cta scenes): e.g. "Your inbox and calendar, taken care of." Reveal voice: "So we built Karo, a service that takes care of your email and calendar."
 - No em dashes anywhere. English names only. Never call Karo an "AI agent". Never say "Karo means do it in Hindi".
 - Every post: NEW names, numbers, situations. Check logs/content-log.csv and never reuse a name, number or hook. Used so far: Rachel Moore, Tom Bennett, Chloe Parker, 563, 2041, Olivia, Daniel, Grace, Henry, Isabel, Jack, Karen, Leo, Maya, Noah, Paula, Marcus, Elena, 2316, 1326, 612, 1000.
@@ -17,12 +18,12 @@ Goal: grow @karo.app.official and get the first 100 real signups. Karo is an ema
 ## Run procedure
 1. add_repo sirisha-patuju/karo-content (push), clone to /home/claude/karo-content (depth 1), read engine/ENGINE.md, logs/content-log.csv, logs/learnings.md.
 2. Research (WebSearch standard): 1-2 searches on current Instagram formats/hooks that work for productivity/AI-tool/startup accounts, and what competitors (Fyxer, Superhuman, Shortwave) post. Use learnings.md first: do more of what the weekly review says works.
-3. Pick an angle: pain point (inbox overload, follow-ups, scheduling back and forth, promotions pile, writing in the right tone), format, hook. Rotate angles so no two posts in a day repeat.
+3. Pick the situation: read engine/situations.md fully (VARIETY is a hard rule). Choose a persona, real moment and Karo job that are NOT in the last 12 rows of logs/content-log.csv (columns persona, job), and a hook style not used in the last 3 posts. Every post must feel like a different real moment from a different person's day, with the same idea underneath. Never write a generic 'too many emails' post.
 4. Create assets. Carousel/image: engine/visual.py (read the VISUAL POSTS section below), static pictures only (NO music, NO slideshow reels). Never plain text on a gradient. Reel: follow the REEL section below (launch-video style, never silent). Look at the output before posting (carousel slide, or the reel preview sheet).
 5. Save to media/YYYY-MM-DD/<slot>-*.jpg|mp4, commit and push to main.
 6. Post: Make scenario 7035693 via scenarios_run (responsive false). Inputs: type (reel|photo|carousel), media_url (raw.githubusercontent.com/sirisha-patuju/karo-content/main/...), caption, thumb_offset (ms, reel cover frame), files (carousel: [{media_type:"IMAGE", image_url}]).
 7. After 90 seconds, executions_list / executions_get-detail to confirm SUCCESS. On failure, read the error, fix once, retry once, then log FAILED.
-8. Append a row to logs/content-log.csv: date,time,type,hook,caption_first_line,names_used,numbers_used,status. Commit and push.
+8. Append a row to logs/content-log.csv: date,time_ist,type,hook,names_used,numbers_used,status,persona,job (the log header has these columns; persona = who the post is about, job = what Karo did for them). Commit and push.
 9. Log to the Google Sheet "Karo" (id 1IVcI4cNgWWX_ixD18YbeYGyWndT_s9V3WdsbVrop3Zs), tab "Content data", through the same Make scenario 7035693 (scenarios_run, responsive true) with data:
    type "sheet", gs_method "POST", gs_url "spreadsheets/1IVcI4cNgWWX_ixD18YbeYGyWndT_s9V3WdsbVrop3Zs/values/'Content data'!A1:append?valueInputOption=RAW", gs_body (JSON text) {"values":[[date,time_ist,type,hook,caption_first_line,"","","","","",""]]}.
    Columns: Date, Time IST, Type, Hook, Caption, Post ID, Reach, Likes, Saves, Shares, Comments (leave the last 6 empty).

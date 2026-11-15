@@ -3,3 +3,5 @@
 - Sample content used so far (do not reuse): Marcus Hill invoice, Elena Ward call, 612 newsletters, 1,000 unread, Tom/Claire/Ian/Rachel/Peter/Sophie/Gary, 7 drafts.
 - Reel engine: engine/launch (launch-video style, voice am_michael). Example used: 563 unread, Rachel, Tom, Chloe, invoice 2041.
 - signups_total=0 on 2026-11-15 (test row excluded). Used in 08:30 reel: Sarah Mitchell, Ethan Brooks, 847, 318, 19.
+
+- 2026-11-15: carousels and image posts switched from plain text slides to engine/visual.py (real inbox, calendar, phone chat, before/after, notification flood, sent email). Siri: text-only posts feel boring, people need to see something.

@@ -18,7 +18,7 @@ Goal: grow @karo.app.official and get the first 100 real signups. Karo is an ema
 1. add_repo sirisha-patuju/karo-content (push), clone to /home/claude/karo-content (depth 1), read engine/ENGINE.md, logs/content-log.csv, logs/learnings.md.
 2. Research (WebSearch standard): 1-2 searches on current Instagram formats/hooks that work for productivity/AI-tool/startup accounts, and what competitors (Fyxer, Superhuman, Shortwave) post. Use learnings.md first: do more of what the weekly review says works.
 3. Pick an angle: pain point (inbox overload, follow-ups, scheduling back and forth, promotions pile, writing in the right tone), format, hook. Rotate angles so no two posts in a day repeat.
-4. Create assets. Carousel/image: engine/render.py, plain static pictures only (NO music, NO slideshow reels). Reel: follow the REEL section below (launch-video style, never silent). Look at the output before posting (carousel slide, or the reel preview sheet).
+4. Create assets. Carousel/image: engine/visual.py (read the VISUAL POSTS section below), static pictures only (NO music, NO slideshow reels). Never plain text on a gradient. Reel: follow the REEL section below (launch-video style, never silent). Look at the output before posting (carousel slide, or the reel preview sheet).
 5. Save to media/YYYY-MM-DD/<slot>-*.jpg|mp4, commit and push to main.
 6. Post: Make scenario 7035693 via scenarios_run (responsive false). Inputs: type (reel|photo|carousel), media_url (raw.githubusercontent.com/sirisha-patuju/karo-content/main/...), caption, thumb_offset (ms, reel cover frame), files (carousel: [{media_type:"IMAGE", image_url}]).
 7. After 90 seconds, executions_list / executions_get-detail to confirm SUCCESS. On failure, read the error, fix once, retry once, then log FAILED.
@@ -45,3 +45,10 @@ Procedure:
 5. Look at /tmp/reel1/cover.jpg (the hook number must be fully visible). Copy reel.mp4 to media/YYYY-MM-DD/<slot>-reel.mp4 and cover.jpg beside it. Commit and push. Post with type "reel", media_url raw URL, caption, thumb_offset = thumb_offset_ms from reel.json.
 6. If the render fails, fix once and retry once. If it still fails, post NOTHING for this slot, log FAILED with the reason, and say so in the report. Never post a silent or fallback reel.
 7. A reel Instagram caption: hook line, 2-3 short lines, CTA: first 100 people, comment "Karo", 3-4 hashtags.
+
+
+## VISUAL POSTS (carousels and the 16:00 image, mandatory)
+Siri's rule (Nov 15): people must SEE something, not read a text post. Every slide shows a real product-style visual: an inbox full of emails, a calendar clash, a phone chat with Karo, a before and after inbox, a flood of notification cards around a big number, a sent follow-up email, or a phone with the typed prompt. Never a slide that is only text on a background. Max one short headline per slide (under 8 words) and one big visual.
+Engine: engine/visual.py. Run: python3 engine/visual.py spec.json /tmp/post1  (about 10 s, writes c1.jpg ...; 1080x1350). Kinds and fields are in the docstring at the top of visual.py: inbox, calendar, chat, beforeafter, stat, mail, cta.
+Carousel (5 to 7 slides): slide 1 = scroll-stopper visual (inbox badge number, calendar clash or stat flood), slides 2 to 5 = the story told with chat / mail / beforeafter visuals (a different kind on each slide, never the same kind twice in a row), last slide = cta (orange button, comment "Karo"). The 16:00 image post = ONE slide, the strongest visual (inbox with badge, stat flood or beforeafter) plus a one-line hook.
+All names, numbers, subjects and replies in the visuals are NEW every time (see used list), English names only, no em dashes, no AI words (service positioning). Reply text must be true of Karo. Read the output pictures with the Read tool (contact sheet is fine) and fix overlap or cut-off text before posting.

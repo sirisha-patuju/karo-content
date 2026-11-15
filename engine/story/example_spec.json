@@ -1,0 +1,161 @@
+{
+ "seed": 5,
+ "key": 1,
+ "theme": "midnight",
+ "voice": "af_heart",
+ "speed": 1.0,
+ "scenes": [
+  {
+   "kind": "calendar",
+   "kicker": "Saturday, 9:02 AM",
+   "day": "Saturday",
+   "sub": "3 viewings",
+   "hours": [
+    "10 AM",
+    "11 AM",
+    "12 PM",
+    "1 PM",
+    "2 PM",
+    "3 PM"
+   ],
+   "rh": 125,
+   "events": [
+    {
+     "label": "Alvarez viewing",
+     "sub": "11:00 AM",
+     "f0": 1,
+     "fs": 1.4,
+     "fc": 0
+    },
+    {
+     "label": "Brooks viewing",
+     "sub": "11:00 AM",
+     "f0": 1,
+     "fs": 1.4,
+     "fc": 1
+    },
+    {
+     "label": "Nguyen viewing",
+     "sub": "11:00 AM",
+     "f0": 1.1,
+     "fs": 1.4,
+     "fc": 2
+    }
+   ],
+   "clash": "Triple booked",
+   "clash_y": 780,
+   "done_y": 780,
+   "line": "Three buyers, one Saturday slot, and Hannah was already running late."
+  },
+  {
+   "kind": "inbox",
+   "kicker": "9:04 AM",
+   "title": "Inbox",
+   "badge": "7",
+   "rows": [
+    [
+     "Mark Alvarez",
+     "Can we do 11 instead of noon?",
+     "9:03 AM"
+    ],
+    [
+     "Priya Brooks",
+     "Still on for the 11 AM viewing?",
+     "9:02 AM"
+    ],
+    [
+     "Dan Nguyen",
+     "Is the house still available at 11?",
+     "9:01 AM"
+    ],
+    [
+     "Mortgage broker",
+     "Pre-approval letter attached",
+     "8:40 AM"
+    ],
+    [
+     "Zillow",
+     "3 new inquiries for Oak Lane",
+     "8:12 AM"
+    ]
+   ],
+   "line": "Every email wanted an answer right now."
+  },
+  {
+   "kind": "chat",
+   "kicker": "9:05 AM",
+   "user": "Move Alvarez to 1 PM and tell the others",
+   "reply_title": "Done.",
+   "reply_lines": [
+    "The Alvarez viewing is now at 1:00 PM.",
+    "Both other buyers have your reply."
+   ],
+   "chip": "Emails sent",
+   "line": "So she typed one sentence."
+  },
+  {
+   "kind": "calendar",
+   "kicker": "9:06 AM",
+   "day": "Saturday",
+   "sub": "3 viewings",
+   "hours": [
+    "10 AM",
+    "11 AM",
+    "12 PM",
+    "1 PM",
+    "2 PM",
+    "3 PM"
+   ],
+   "rh": 125,
+   "events": [
+    {
+     "label": "Alvarez viewing",
+     "sub": "1:00 PM",
+     "f0": 1,
+     "fs": 1.4,
+     "fc": 0,
+     "t0": 3,
+     "ts": 1.4,
+     "tc": 0
+    },
+    {
+     "label": "Brooks viewing",
+     "sub": "11:00 AM",
+     "f0": 1,
+     "fs": 1.4,
+     "fc": 1,
+     "t0": 1,
+     "ts": 1.4,
+     "tc": 0
+    },
+    {
+     "label": "Nguyen viewing",
+     "sub": "3:00 PM",
+     "f0": 1.1,
+     "fs": 1.4,
+     "fc": 2,
+     "t0": 5,
+     "ts": 1.0,
+     "tc": 0
+    }
+   ],
+   "clash": "Triple booked",
+   "clash_y": 780,
+   "done": "All three told",
+   "done_y": 780,
+   "line": "Three viewings. Three times. Nobody upset."
+  },
+  {
+   "kind": "moment",
+   "kicker": "9:14 AM",
+   "big": "9:14",
+   "label": "Coffee still hot.",
+   "line": "By the time she parked, it was all handled, and her coffee was still hot."
+  },
+  {
+   "kind": "cta",
+   "tag": "Your inbox and calendar, taken care of.",
+   "line": "Karo takes care of your email and calendar. Comment Karo for early access."
+  }
+ ]
+}
